@@ -5,7 +5,6 @@
 - [Description](#description)
 - [Features](#features)
 - [User-Story](#user-story)
-- [Acceptance-Criteria](#acceptance-criteria)
 - [Usage](#usage)
 - [Webpage-Screenshots](#webpage-screenshots)
 - [Github-Link](#github-link)
@@ -14,7 +13,7 @@
 
 ### Description
 
-This application acts as
+This application allows teachers to sign up and create an account, manage/schedule their workday, post their school/student related needs on a message board, and interact with fellow teachers in real time.
 
 ### Features
 
@@ -28,15 +27,15 @@ This application includes the following features:
 
 AS A teacher
 I WANT to effectively manage my workday utilizing daily schedulers and peer message boards
-SO THAT I am abreast of any school/student related updates in real time
-
-### Acceptance Criteria
+SO THAT I remain organized and abreast of any school/student related updates in real time
 
 ### Usage
 
 ### Webpage Screenshots
 
 ### GitHub Link
+
+https://github.com/jlcunningham2101/dream-small
 
 ### Heroku Link
 
