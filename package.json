@@ -19,5 +19,6 @@
   "homepage": "https://github.com/jlcunningham2101/dream-small#readme",
   "dependencies": {
     "concurrently": "^7.1.0"
-  }
+  },
+  "devDependencies": {}
 }
