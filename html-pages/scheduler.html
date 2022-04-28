@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheduler</title>
+    <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+    <link href="../style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="container justify-content-between">
+            <nav class="d-flex row align-items-center">
+                <div class="col">
+                    <img class="logo"
+                        src="https://www.adaptivewfs.com/wp-content/uploads/2020/07/logo-placeholder-image-300x300.png.webp"
+                        alt="logo" height="100">
+                </div>
+                <div class="col">
+                    <ul class="d-flex">
+                        <li class="col">
+                            <a href="./scheduler.html">Scheduler</a>
+                        </li>
+                        <li class="col">
+                            <a href="./messageboard.html">Message Board</a>
+                        </li>
+                        <li class="col">
+                            <a href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- <p id="currentDay"></p> -->
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th class="text-center" scope="col" id="currentDay">
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">7:00 AM</th>
+                        <td class="text-center d-flex align-items-center" id="7">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8:00 AM</th>
+                        <td class="text-center d-flex align-items-center" id="8">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">9:00 AM</th>
+                        <td class="text-center d-flex align-items-center" id="9">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">10:00 AM</th>
+                        <td class="text-center d-flex align-items-center" id="10">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">11:00 AM</th>
+                        <td class="text-center d-flex align-items-center" id="11">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">12:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="12">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">1:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="1">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="2">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">3:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="3">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="4">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="5">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6:00 PM</th>
+                        <td class="text-center d-flex align-items-center" id="6">
+                            <textarea>Something</textarea>
+                            <button class="btn saveBtn justify-content-center"><i class="fas fa-save"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="../js/scheduler.js"></script>
+</body>
+
+</html>
