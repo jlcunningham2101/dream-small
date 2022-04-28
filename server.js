@@ -1,7 +1,7 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
-const mongoose = require("mongoose");
 
 const { typeDefs, resolvers } = require("./schemas");
 const { authMiddleware } = require("./utils/auth");
@@ -25,6 +25,7 @@ startServer();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(require("./server/routes"));
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
@@ -38,6 +39,7 @@ app.get("*", (req, res) => {
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:3000/dream-small",
   {
+    useFindAndModify: false,
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }

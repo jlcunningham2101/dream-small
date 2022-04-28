@@ -1,10 +1,15 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema, model } = require("mongoose");
 
-const scheduleSchema = new Schema({
-    title: {
+const ScheduleSchema = new Schema({
+    eventTitle: {
         type: String,
         required: true
+    },
+
+    createdBy: {
+        type: String,
+        required: true,
+        trim: true
     },
 
     startTime: {
@@ -22,6 +27,8 @@ const scheduleSchema = new Schema({
     }
 });
 
-const Schedule = mongoose.model('Schedule', scheduleSchema);
+// create the Schedule model using ScheduleSchema
+const Schedule = model('Schedule', ScheduleSchema);
 
+// export the Schedule model
 module.exports = Schedule;
