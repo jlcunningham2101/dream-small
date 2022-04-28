@@ -10,6 +10,8 @@ const db = require("./server/config/connection");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+require("dotenv").config({path: ".env"})
+
 const startServer = async () => {
   const server = new ApolloServer({
     typeDefs,
@@ -37,7 +39,7 @@ app.get("*", (req, res) => {
 });
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost:3000/dream-small",
+  process.env.MONGODB_URI || "mongodb://localhost:3001/dream-small",
   {
     useFindAndModify: false,
     useNewUrlParser: true,
