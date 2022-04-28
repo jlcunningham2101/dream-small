@@ -1,10 +1,10 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
+const mongoose = require("mongoose");
 
-const { typeDefs, resolvers } = require("./schemas");
-// const { authMiddleware } = require("./utils/auth");
+const { typeDefs, resolvers } = require("./server/schemas");
+const { authMiddleware } = require("./server/utils/auth");
 const db = require("./server/config/connection");
 
 const PORT = process.env.PORT || 3001;
@@ -21,11 +21,11 @@ const startServer = async () => {
   console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
 };
 
-startServer();
+startServer(typeDefs, resolvers);
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(require("./server/routes"));
+// app.use(require("./server/routes"));
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
@@ -35,7 +35,6 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
-
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:3000/dream-small",
