@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 
@@ -24,6 +25,7 @@ startServer();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(require("./server/routes"));
 
 // Serve up static assets
 if (process.env.NODE_ENV === "production") {
@@ -33,6 +35,18 @@ if (process.env.NODE_ENV === "production") {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:3000/dream-small",
+  {
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
+// Use this to log mongo queries being executed!
+mongoose.set("debug", true);
 
 db.once("open", () => {
   app.listen(PORT, () => {
