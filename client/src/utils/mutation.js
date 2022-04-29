@@ -23,30 +23,30 @@ export const ADD_USER = gql`
     }
   }
 `;
-/*
-export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+
+export const ADD_POST = gql`
+  mutation addPost($postText: String!) {
+    addPost(postText: $postText) {
       _id
-      thoughtText
+      postText
       createdAt
       username
-      reactionCount
-      reactions {
+      CommentCount
+      comments {
         _id
       }
     }
   }
 `;
 
-export const ADD_REACTION = gql`
-  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
-    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+export const ADD_COMMENT = gql`
+  mutation addComment($postId: ID!, $commentBody: String!) {
+    addComment(postId: $postId, commentBody: $commentBody) {
       _id
-      reactionCount
-      reactions {
+      commentCount
+      comments {
         _id
-        reactionBody
+        commentBody
         createdAt
         username
       }
@@ -54,13 +54,13 @@ export const ADD_REACTION = gql`
   }
 `;
 
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
+export const ADD_TEACHER = gql`
+  mutation addTeacher($id: ID!) {
+    addTeacher(teacherId: $id) {
       _id
       username
-      friendCount
-      friends {
+      teacherCount
+      teachers {
         _id
         username
       }
@@ -68,12 +68,12 @@ export const ADD_FRIEND = gql`
   }
 `;
 
-export const REMOVE_FRIEND = gql`
-  mutation removeFriend($id: ID!) {
-    removeFriend(id: $id) {
+export const REMOVE_TEACHER = gql`
+  mutation removeTeacher($id: ID!) {
+    removeTeacher(id: $id) {
       _id
       username
-      friends {
+      teachers {
         _id
         username
       }

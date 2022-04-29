@@ -1,19 +1,20 @@
 const { Schema, model } = require("mongoose");
 
-const ScheduleSchema = new Schema({
+const scheduleSchema = new Schema({
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true,
+  },
   task: {
     type: String,
     required: false,
   },
-
-  id: {
-    type: Number,
-    //add primary key here, auto increment
-  },
 });
 
 // create the Schedule model using ScheduleSchema
-const Schedule = model("Schedule", ScheduleSchema);
+const Schedule = model("Schedule", scheduleSchema);
 
 // export the Schedule model
 module.exports = Schedule;
