@@ -1,35 +1,19 @@
 const { Schema, model } = require("mongoose");
-const bcrypt = require("bcrypt");
 
 const ScheduleSchema = new Schema({
-    eventTitle: {
-        type: String,
-        required: true
-    },
+  task: {
+    type: String,
+    required: false,
+  },
 
-    createdBy: {
-        type: String,
-        required: true,
-        trim: true
-    },
-
-    startTime: {
-        type: String,
-        required: true,
-    },
-
-    endTime: {
-        type: String,
-        reuired: true
-    },
-
-    id: {
-        type: Number
-    }
+  id: {
+    type: Number,
+    //add primary key here, auto increment
+  },
 });
 
 // create the Schedule model using ScheduleSchema
-const Schedule = model('Schedule', ScheduleSchema);
+const Schedule = model("Schedule", ScheduleSchema);
 
 // export the Schedule model
 module.exports = Schedule;
