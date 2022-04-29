@@ -1,3 +1,4 @@
+/*
 const { User } = require("../models");
 
 const userController = {
@@ -78,12 +79,12 @@ const userController = {
         }
         // remove the user from any friends arrays
         User.updateMany(
-          { _id: { $in: dbUserData.friends } },
-          { $pull: { friends: params.id } }
+          { _id: { $in: dbUserData.teachers } },
+          { $pull: { teachers: params.id } }
         )
           .then(() => {
             // remove any comments from this user
-            Thought.deleteMany({ username: dbUserData.username })
+            Post.deleteMany({ username: dbUserData.username })
               .then(() => {
                 res.json({ message: "Successfully deleted user" });
               })
@@ -94,13 +95,13 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
-  // POST /api/users/:userId/friends/:friendId
-  addFriend({ params }, res) {
-    // add friendId to userId's friend list
+  // POST /api/users/:userId/teachers/:teacherId
+  addTeacher({ params }, res) {
+    // add teacherId to userId's teacher list
     console.log("anything");
     User.findOneAndUpdate(
       { _id: params.userId },
-      { $push: { friends: params.friendId } },
+      { $push: { teachers: params.teacherId } },
       { new: true }
     )
       .then((dbUserData) => {
@@ -113,13 +114,13 @@ const userController = {
       .catch((err) => res.status(400).json(err));
   },
 
-  // DELETE /api/users/:userId/friends/:friendId
-  deleteFriend({ params }, res) {
-    // remove friendId from userId's friend list
+  // DELETE /api/users/:userId/teacher/:teacherId
+  deleteTeacher({ params }, res) {
+    // remove teacherId from userId's teacher list
     console.log(params);
     User.findOneAndUpdate(
       { _id: params.userId },
-      { $pull: { friends: params.friendId } },
+      { $pull: { teachers: params.teacherId } },
       { runValidators: true }
     )
       .then((dbUserData) => {
@@ -134,3 +135,4 @@ const userController = {
 };
 
 module.exports = userController;
+*/
