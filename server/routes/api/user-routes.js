@@ -6,8 +6,8 @@ const {
   createUser,
   updateUser,
   deleteUser,
-  addFriend,
-  deleteFriend,
+  addTeacher,
+  deleteTeacher,
 } = require("../../controllers/user-controller");
 
 router
