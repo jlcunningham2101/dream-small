@@ -47,8 +47,9 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/login" element={<Login />} />
-              <Route exact path="/signup" element={<Signup />} />
+              <Route exact path="/Profile" element={<Profile />} />
               <Route exact path="/profile/:username?" element={<Profile />} />
+              <Route exact path="/Signup" element={<Signup />} />
               <Route exact path="/Post/:id" element={<SinglePost />} />
 
               <Route component={NoMatch} />
