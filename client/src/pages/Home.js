@@ -2,8 +2,8 @@ import React from "react";
 import PostList from "../components/PostList";
 import PostForm from "../components/PostForm";
 import TeacherList from "../components/TeacherList";
-import ScheduleForm from "../components/ScheduleForm";
-import ScheduleList from "../components/ScheduleList";
+//import ScheduleForm from "../components/ScheduleForm";
+//import ScheduleList from "../components/ScheduleList";
 
 import Auth from "../utils/auth";
 import { useQuery } from "@apollo/client";
